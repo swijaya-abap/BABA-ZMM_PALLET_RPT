@@ -38,7 +38,10 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_hcb", "sap_belize"]
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -70,9 +73,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -85,14 +90,20 @@
 				"controlAggregation": "pages",
 				"clearControlAggregation": false,
 				"bypassed": {
-					"target": ["Page1"]
+					"target": [
+						"Page1"
+					]
 				}
 			},
-			"routes": [{
-				"pattern": "Page1/:context:",
-				"name": "Page1",
-				"target": ["Page1"]
-			}],
+			"routes": [
+				{
+					"pattern": "Page1/:context:",
+					"name": "Page1",
+					"target": [
+						"Page1"
+					]
+				}
+			],
 			"targets": {
 				"Page1": {
 					"controlAggregation": "pages",
@@ -103,5 +114,9 @@
 				}
 			}
 		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zmm_pallet_rpt/webapp",
+		"_version": "1.1.0"
 	}
 }
