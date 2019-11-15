@@ -1,0 +1,60 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.baba.ZMM_PALLET_RPT.controller.Page1" xmlns="sap.m">
+	<App id="idAppControl">
+		<Page showHeader="true" title="Pallet History" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+			<content>
+				<Label text="Pallet" design="Bold" width="46.36249923706055px" required="false" textAlign="Initial" textDirection="Inherit" visible="true"
+					class="sapUiSmallMargin"/>
+				<Input id="InPallet" value="" placeholder="Scan or Input Pallet ID" type="Text" description="" showValueHelp="false" enabled="true"
+					visible="true" width="864.6749877929688px" valueHelpOnly="false" required="true" valueStateText="Invalid entry" maxLength="0"/>
+				<List id="ListPalletInfo" mode="None" width="100%" headerText="Pallet Details" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
+					items="{/PalletInfo}" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveContentPadding">
+					<infoToolbar>
+						<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+							<content>
+								<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</content>
+						</Toolbar>
+					</infoToolbar>
+					<headerToolbar>
+						<Toolbar enabled="true" visible="false" width="" design="Solid">
+							<content>
+								<SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
+							</content>
+						</Toolbar>
+					</headerToolbar>
+					<items>
+						<DisplayListItem label="{label}" value="{value}" visible="true" type="Active" selected="false"/>
+						<!--<DisplayListItem label="Pallet ID" value="1800000001001" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Pallet ID" value="1800000001001" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Material" value="{/Material}" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Description" value="{Material}" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Inbound Delivery" value="{PalletInfo>Material}" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Actual Qty" value="15000" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Unit" value="KG" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="No. of Bags" value="100" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Vendor ID" value="90001" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Vendor Name" value="Jatin Pursnani" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Batch" value="2019110101" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Receiving Date" value="20/12/2019" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Shelf Life" value="20/12/2019" visible="true" type="Active" selected="false"/>-->
+						<!--<DisplayListItem label="Plant" value="1200" visible="true" type="Active" selected="false"/>-->
+					</items>
+				</List>
+			</content>
+			<footer>
+				<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+					<content>
+						<ToolbarSpacer width=""/>
+						<Button text="Get Pallet Information" type="Emphasized" icon="sap-icon://drill-down" iconFirst="true" width="auto" enabled="true"
+							visible="true" iconDensityAware="false" press="onGetPallet"/>
+						<Button text="Clear" type="Default" icon="sap-icon://reset" iconFirst="true" width="auto" enabled="true" visible="true"
+							iconDensityAware="false" press="onClear"/>
+					</content>
+				</OverflowToolbar>
+			</footer>
+			<headerContent/>
+			<subHeader/>
+			<customHeader/>
+		</Page>
+	</App>
+</mvc:View>
