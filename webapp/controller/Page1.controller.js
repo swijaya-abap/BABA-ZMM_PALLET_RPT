@@ -65,6 +65,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this._clearInput();
 		},
 
+		onExit: function () {
+
+		},
+
 		_onBusyS: function (oBusy) {
 			oBusy.open();
 			oBusy.setBusyIndicatorDelay(40000);
@@ -92,7 +96,16 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				ReceivedPlant: "",
 				Error: ""
 			};
-			this._setPalletData();
+			this._removePalletData();
+		},
+
+		_removePalletData: function () {
+			var oModel = this.byId("ListPalletInfo").getModel();
+			oModel.setData({
+				PalletInfo: {}
+			});
+			this.byId("ListPalletInfo").setModel(oModel);
+			this.byId("ListPalletInfo").getModel().refresh(true);
 		},
 
 		_setPalletData: function () {
