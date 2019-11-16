@@ -1,6 +1,6 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.baba.ZMM_PALLET_RPT.controller.Page1" xmlns="sap.m">
 	<App id="idAppControl">
-		<Page showHeader="true" title="Pallet History" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+		<Page showHeader="true" title="Pallet History" showFooter="true" showNavButton="false" navButtonPress="_onPageNavButtonPress">
 			<content>
 				<Label text="Pallet" design="Bold" width="46.36249923706055px" required="false" textAlign="Initial" textDirection="Inherit" visible="true"
 					class="sapUiSmallMargin"/>
@@ -24,20 +24,6 @@
 					</headerToolbar>
 					<items>
 						<DisplayListItem label="{label}" value="{value}" visible="true" type="Active" selected="false"/>
-						<!--<DisplayListItem label="Pallet ID" value="1800000001001" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Pallet ID" value="1800000001001" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Material" value="{/Material}" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Description" value="{Material}" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Inbound Delivery" value="{PalletInfo>Material}" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Actual Qty" value="15000" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Unit" value="KG" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="No. of Bags" value="100" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Vendor ID" value="90001" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Vendor Name" value="Jatin Pursnani" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Batch" value="2019110101" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Receiving Date" value="20/12/2019" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Shelf Life" value="20/12/2019" visible="true" type="Active" selected="false"/>-->
-						<!--<DisplayListItem label="Plant" value="1200" visible="true" type="Active" selected="false"/>-->
 					</items>
 				</List>
 			</content>
