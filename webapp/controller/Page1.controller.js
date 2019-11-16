@@ -14,22 +14,22 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this.globalVar.oDataModel = new sap.ui.model.odata.v2.ODataModel("/sap/opu/odata/sap/ZMMO_PALLET_RPT_SRV/", true);
 			var jsonModel = new JSONModel();
 			this.byId("ListPalletInfo").setModel(jsonModel);
-			this._clearContent();
+			// this._clearContent();
 			this.oRouter.getTarget("Page1").attachDisplay(jQuery.proxy(this._handleRouteMatched, this));
 		},
 
 		onGetPallet: function () {
 			var oBusy = new sap.m.BusyDialog();
-			this._onBusyS(oBusy);
 
 			var inPallet = this.byId("InPallet").getValue();
 			if (inPallet === "") {
-				MessageBox.Error("Please enter Pallet ID");
+				MessageBox.error("Please enter Pallet ID");
 			} else {
+				this._onBusyS(oBusy);
 				this.globalVar.oDataModel.read("/MrfAndDeliverySet('" + inPallet + "')", {
 					success: function (res, oResponse) {
 						if (res.Error !== "") {
-							sap.m.MessageToast.show(res.Error);
+							MessageBox.error(res.Error);
 						} else {
 							this.globalVar.palletInfo = {
 								Material: res.Material,
@@ -112,7 +112,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					value: this.globalVar.palletInfo.DeliveryOrder
 				}, {
 					label: "Purchase Order",
-					value: this.globalVar.palletInfo.DeliveryOrder
+					value: this.globalVar.palletInfo.PurchaseOrder
 				}, {
 					label: "Actual Qty",
 					value: this.globalVar.palletInfo.QtyInKg
