@@ -19,6 +19,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		},
 
 		onGetPallet: function () {
+			this._clearContent();
+			
 			var oBusy = new sap.m.BusyDialog();
 
 			var inPallet = this.byId("InPallet").getValue();
